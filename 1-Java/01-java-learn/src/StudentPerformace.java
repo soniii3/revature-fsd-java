@@ -7,7 +7,7 @@ public class StudentPerformace {
 		System.out.print("Enter your score:");
 		int marks = sc.nextInt();
 		
-		if(marks >=60 && marks<=70) {
+		if(marks >= 60 && marks <= 70) {
 			System.out.println("Average student");
 		} else {
 			System.out.println("Not Average student");
