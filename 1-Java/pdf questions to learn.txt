@@ -1,0 +1,29 @@
+❖ What is an interface in Java?
+❖ How to define an interface?
+❖ How to implement an interface?
+❖ What is the purpose of using interface?
+❖ What is Object class?
+❖ What is the significance of toString() method in Object class?
+❖ List out the differences between an interface and Abstract class
+❖ What happens when relational equals operator is used to compare two object instances?
+❖ A class has not implemented equals() method. When equals() method is invoked in this class 
+instance what happens.
+❖ What is the check done in equals() method of Object class?
+❖ Describe the importance and significance of toString() and equals() method in Object class.
+❖ What is the importance of Exception Handling?
+❖ Explain the syntax on how try/catch needs to be implemented?
+❖ What happens when an exception is not handled?
+❖ What is provided in the brackets after the catch keyword?
+❖ What is the purpose of getMessage() method in an exception?
+❖ How to define an exception?
+❖ What all needs to be done for making a method throw an exception?
+❖ What is Checked Exception?
+❖ What is Unchecked Exception?
+❖ Unchecked Exception forces the developer to handle the exception. (True / False)
+❖ If a code is invoking a method that throws a Checked Exception, what are the list of steps that 
+needs to be implemented.
+❖ What is the use of Comparable interface?
+❖ What is the expected implementation in compareTo() method and what does it return?
+❖ From where is the compareTo() method called?
+❖ What happens to the collection object after invocation of sort() method?
+❖ Where is the sorting algorithm implemented?
