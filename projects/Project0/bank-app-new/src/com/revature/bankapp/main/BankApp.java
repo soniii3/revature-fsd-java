@@ -1,7 +1,7 @@
 package com.revature.bankapp.main;
 
-import com.retvature.bankapp.menu.CustomerMainMenu;
-import com.retvature.bankapp.menu.MainMenu;
+import com.revature.bankapp.menu.CustomerMainMenu;
+import com.revature.bankapp.menu.MainMenu;
 
 public class BankApp {
 

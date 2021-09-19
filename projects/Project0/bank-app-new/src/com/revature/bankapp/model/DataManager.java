@@ -1,11 +1,13 @@
-package com.retvature.bankapp.model;
+package com.revature.bankapp.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataManager {
 private static List<Customer> customerList = new ArrayList<>();
-	
+private static int choice;
+private static Customer currentCustomer;
+
 	static {
 		customerList.add(new Customer("John", "Smith", "john", "123"));
 	}
@@ -21,5 +23,12 @@ private static List<Customer> customerList = new ArrayList<>();
 			}
 		}
 		return null;
+	}
+	public static Customer getCurrentCustomer() {
+		return currentCustomer;
+	}
+
+	public static void setCurrentCustomer(Customer currentCustomer) {
+		DataManager.currentCustomer = currentCustomer;
 	}
 }

@@ -1,4 +1,4 @@
-package com.retvature.bankapp.menu;
+package com.revature.bankapp.menu;
 
 import java.util.ArrayList;
 import java.util.List;
