@@ -1,36 +1,34 @@
 package com.revature.bankapp.menu;
 
-
 import java.sql.SQLException;
 import java.util.Scanner;
 
 import com.revature.app.dao.impl.AccountDaoImpl;
+import com.revature.bankapp.model.Account;
 import com.revature.bankapp.model.ViewAccountsAndTransactions;
 
-
-
 public class TransactionMainMenu extends Menu {
-public static String transferAccNum;
-public static String accNumber;
-Scanner sc = new Scanner(System.in);
-CustomerMainMenu cusMenu = new CustomerMainMenu("Customer Menu");
+	public static String transferAccNum;
+	public static String accNumber;
+	Scanner sc = new Scanner(System.in);
+	//CustomerMainMenu cusMenu = new CustomerMainMenu("Customer Menu");
 
 	public TransactionMainMenu(String name) {
 		super(name);
 		addMenuItem("Withdrwal");
 		addMenuItem("Deposit");
-		addMenuItem("View Balance");
 		addMenuItem("View Transaction Log");
-		addMenuItem("Back");
+		addMenuItem("View Balance");
+		addMenuItem("Transfer Amount");
+		addMenuItem("Back to Main Menu");
 	}
-	
+
 	public String getAccount() {
 		System.out.println("Enter Account number to make transaction: ");
 		accNumber = sc.nextLine();
 		System.out.println("Account Number: " + accNumber);
 		return accNumber;
 	}
-
 
 	@Override
 	void handleAction() {
@@ -42,15 +40,15 @@ CustomerMainMenu cusMenu = new CustomerMainMenu("Customer Menu");
 			try {
 				System.out.println("Enter amount to withdraw: ");
 				double amount = sc.nextDouble();
-				accdao.currentAccount().withdraw(amount);
+				accdao.currentAccount();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			cusMenu.displayMenuAndCaptureSelection();
+			displayMenuAndCaptureSelection();
 			break;
 
 		case 2:
-			
+
 			try {
 				System.out.println("Enter amount to deposit: ");
 				double amount = sc.nextDouble();
@@ -58,9 +56,9 @@ CustomerMainMenu cusMenu = new CustomerMainMenu("Customer Menu");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			cusMenu.displayMenuAndCaptureSelection();
+			displayMenuAndCaptureSelection();
 			break;
-			
+
 		case 3:
 			try {
 				accdao.currentAccount();
@@ -68,19 +66,19 @@ CustomerMainMenu cusMenu = new CustomerMainMenu("Customer Menu");
 				e.printStackTrace();
 			}
 			ViewAccountsAndTransactions.transactionsList();
-			cusMenu.displayMenuAndCaptureSelection();
+			displayMenuAndCaptureSelection();
 			break;
-			
+
 		case 4:
 			try {
-				double balance = accdao.currentAccount().getBalance();
+				Account balance = accdao.currentAccount();
 				System.out.println("Balance: " + balance);
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
-			cusMenu.displayMenuAndCaptureSelection();
+			displayMenuAndCaptureSelection();
 			break;
-		
+
 		case 5:
 			System.out.println("Enter Account Number of receiver: ");
 			transferAccNum = sc.nextLine();
@@ -99,19 +97,14 @@ CustomerMainMenu cusMenu = new CustomerMainMenu("Customer Menu");
 				e.printStackTrace();
 				System.out.println("deposit failed");
 			}
-			cusMenu.displayMenuAndCaptureSelection();
+			displayMenuAndCaptureSelection();
 			break;
-			
+
 		case 6:
-			cusMenu.displayMenuAndCaptureSelection();
-			
-		case 7:
 			MainMenu mm = new MainMenu("Main Menu");
 			mm.displayMenuAndCaptureSelection();
 		}
-		
+
 	}
 
 }
-
-

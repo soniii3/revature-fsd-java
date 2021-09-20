@@ -59,16 +59,16 @@ public class AccountDaoImpl implements AccountDao {
 	public Account currentAccount() throws SQLException {
 		Account account = null;
 		try (Connection connection = Util.getConnection()) {
-			String sql = "select * from account where account_number = ?";
+			String sql = "select * from account where account_num = ?";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, TransactionMainMenu.accNumber);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				currentAccountId = resultSet.getInt("id");
-				String accNumber = resultSet.getString("account_number");
-				Double initialAmount = resultSet.getDouble("initial_Amount");
+				String accNumber = resultSet.getString("account_num");
+				Double balance = resultSet.getDouble("balance");
 
-				account = new Account(accNumber, initialAmount);
+				account = new Account(accNumber, balance);
 			}
 		}
 		return account;
@@ -141,13 +141,13 @@ public class AccountDaoImpl implements AccountDao {
 	public Account transferAccount() throws SQLException {
 		Account account = null;
 		try (Connection connection = Util.getConnection()) {
-			String sql = "select * from account where account_number = ?";
+			String sql = "select * from account where account_num = ?";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, TransactionMainMenu.transferAccNum);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				transferAccountId = resultSet.getInt("id");
-				String accNumber = resultSet.getString("account_number");
+				String accNumber = resultSet.getString("account_num");
 				Double balance = resultSet.getDouble("balance");
 
 				account = new Account(accNumber, balance);
@@ -161,13 +161,13 @@ public class AccountDaoImpl implements AccountDao {
 	public List<Account> accountList() throws SQLException {
 		List<Account> accountList = new ArrayList<>();
 		try (Connection connection = Util.getConnection()) {
-			String sql = "select * from account where customer_id = ?";
+			String sql = "select * from account where cus_id = ?";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setInt(1, CustomerDaoImpl.current_id);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				Account account = new Account();
-				account.setAccountNumber(resultSet.getString("account_number"));
+				account.setAccountNumber(resultSet.getString("account_num"));
 				account.setBalance(resultSet.getDouble("balance"));
 				accountList.add(account);
 

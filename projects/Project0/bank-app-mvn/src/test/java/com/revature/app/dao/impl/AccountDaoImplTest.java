@@ -16,7 +16,7 @@ public class AccountDaoImplTest {
 		account.setBalance(6000);
 		account.setName("venkat");
 		try {
-			adao.create(account,4);
+			adao.create(account);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -7,10 +7,10 @@ public class Transaction {
 	private String accountNumber;
 	private double initialAmount;
 	private int accountId;
-	private char type;
+	private String type;
 	private double amount;
 
-	public Transaction(char type, double amount) {
+	public Transaction(String type, double amount) {
 		this.type = type;
 		this.amount = amount;
 	}
@@ -60,12 +60,12 @@ public class Transaction {
 		this.accountId = accountId;
 	}
 
-	public char getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(char type) {
-		this.type = type;
+	public void setType(String c) {
+		this.type = c;
 	}
 
 	public double getAmount() {
@@ -85,6 +85,16 @@ public class Transaction {
 		return "CustomerId: " + customerId + "  Name: " + name + "  Account Number: " + accountNumber
 				+ "  Balance: " + initialAmount + "  Account Id: " + accountId + "  Type: " + type + "  Amount: "
 				+ amount;
+	}
+
+	public void setMoney(int int1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setType(char charAt) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

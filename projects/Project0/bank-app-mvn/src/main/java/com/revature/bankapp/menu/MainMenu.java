@@ -55,6 +55,15 @@ public class MainMenu extends Menu{
 			LoginForm loginForm = new LoginForm("Login Form");
 			loginForm.captureDataAndPerformAction();
 			break;
+			
+		case 3 :
+			//EmployeeLoginForm employeeLoginForm = new EmployeeLoginForm("Employee Login Form");
+			//employeeLoginForm.captureDataAndPerformAction();
+			displayMenuAndCaptureSelection();
+			break;
+		case 4 : 
+			System.out.println("Close");
+			break;
 		}
 	}
 }

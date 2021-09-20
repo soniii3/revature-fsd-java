@@ -38,13 +38,15 @@ public class LoginForm extends Form {
 			} else if (customer.getPassword().equals(password)) {
 				success = true;
 				
-				System.out.println("Login Successful");
+				System.out.println("Successfully Login");
+				System.out.println();
 				System.out.println("Welcome " + customer.getFirstName());
 				CustomerMainMenu customerMenu = new CustomerMainMenu("Customer Menu");
 				customerMenu.displayMenuAndCaptureSelection();
 
 			} else {
 				System.out.println("Invalid Password or Email");
+				System.out.println("Please try again...");
 			}
 
 		} catch (SQLException e) {
