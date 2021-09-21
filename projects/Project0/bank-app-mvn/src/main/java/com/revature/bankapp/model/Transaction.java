@@ -1,3 +1,4 @@
+
 package com.revature.bankapp.model;
 
 public class Transaction {
@@ -7,22 +8,15 @@ public class Transaction {
 	private String accountNumber;
 	private double initialAmount;
 	private int accountId;
-	private String type;
+	private char type;
 	private double amount;
 
-	public Transaction(String c, double amount) {
+	public Transaction(char c, double amount) {
 		this.type = c;
 		this.amount = amount;
 	}
 	
-	public Transaction() {
-		
-	}
 	
-
-	public Transaction(char c, double amount2) {
-		// TODO Auto-generated constructor stub
-	}
 
 	public int getCustomerId() {
 		return customerId;
@@ -64,11 +58,11 @@ public class Transaction {
 		this.accountId = accountId;
 	}
 
-	public String getType() {
+	public char getType() {
 		return type;
 	}
 
-	public void setType(String c) {
+	public void setType(char c) {
 		this.type = c;
 	}
 
@@ -83,6 +77,10 @@ public class Transaction {
 	public String print() {
 		return "Type: " + type + "  Amount: "+ amount;
 	}
+	
+	public Transaction() {
+		
+	}
 
 	@Override
 	public String toString() {
@@ -96,10 +94,7 @@ public class Transaction {
 		
 	}
 
-	public void setType(char charAt) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 
 	

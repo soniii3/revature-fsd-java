@@ -80,4 +80,15 @@ public class Customer {
 	}
 
 	
+
+	public void setName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setEmail(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

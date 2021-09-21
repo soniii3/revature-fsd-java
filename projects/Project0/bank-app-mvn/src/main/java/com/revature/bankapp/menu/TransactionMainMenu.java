@@ -40,7 +40,7 @@ public class TransactionMainMenu extends Menu {
 			try {
 				System.out.println("Enter amount to withdraw: ");
 				double amount = sc.nextDouble();
-				accdao.currentAccount();
+				accdao.currentAccount().withdraw(amount);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -52,7 +52,7 @@ public class TransactionMainMenu extends Menu {
 			try {
 				System.out.println("Enter amount to deposit: ");
 				double amount = sc.nextDouble();
-				accdao.currentAccount();
+				accdao.currentAccount().deposit(amount);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

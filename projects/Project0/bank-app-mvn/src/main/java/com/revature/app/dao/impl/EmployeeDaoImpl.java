@@ -28,8 +28,8 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			while(resultSet.next()) {
 				Customer customerTemp = new Customer();
 				customerTemp.setId(resultSet.getInt("id"));
-				customerTemp.setName(resultSet.getString("name"));
-				customerTemp.setUserId(resultSet.getString("user_id"));
+				customerTemp.setName(resultSet.getString("firstname"));
+				customerTemp.setEmail(resultSet.getString("email_id"));
 				customerList.add(customerTemp);
 			}
 		return customerList;
@@ -46,7 +46,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				Account accountTemp = new Account();
-				accountTemp.setCustomerId(resultSet.getInt("id"));
+				accountTemp.setId(resultSet.getInt("id"));
 				accountTemp.setName(resultSet.getString("name"));
 				accountTemp.setAccountNumber(resultSet.getString("account_number"));
 				accountTemp.setBalance(resultSet.getDouble("balance"));
@@ -70,7 +70,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 				transactionTemp.setCustomerId(resultSet.getInt("id"));
 				transactionTemp.setName(resultSet.getString("name"));
 				transactionTemp.setAccountNumber(resultSet.getString("account_number"));
-				transactionTemp.setBalance(resultSet.getDouble("balance"));
+				transactionTemp.setAmount(resultSet.getDouble("balance"));
 				transactionTemp.setType(resultSet.getString("type").charAt(0));
 				transactionTemp.setAmount(resultSet.getDouble("amount"));
 				transactionList.add(transactionTemp);

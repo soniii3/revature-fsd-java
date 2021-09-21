@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import com.revature.app.dao.impl.AccountDaoImpl;
 import com.revature.bankapp.menu.CustomerMainMenu;
+import com.revature.bankapp.menu.TransactionMainMenu;
 
 public class ViewAccountsAndTransactions {
 	
@@ -35,9 +36,9 @@ public class ViewAccountsAndTransactions {
 				for (int i = 0; i < transaction.size(); i++) {
 					System.out.println((i + 1) + ") " + transaction.get(i).print());
 				}
-				CustomerMainMenu cm = new CustomerMainMenu("Customer Menu");
+				TransactionMainMenu tranmain = new TransactionMainMenu("Transaction Menu");
 				
-				cm.displayMenuAndCaptureSelection();;
+				tranmain.displayMenuAndCaptureSelection();;
 			} catch (SQLException e) {
 				e.printStackTrace();
 				System.out.println("Cannot display accounts");

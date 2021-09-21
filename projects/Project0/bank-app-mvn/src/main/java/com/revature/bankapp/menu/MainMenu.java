@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import com.revature.app.dao.CustomerDao;
 import com.revature.app.dao.impl.CustomerDaoImpl;
+import com.revature.bankapp.form.EmployeeLoginForm;
 import com.revature.bankapp.form.LoginForm;
 import com.revature.bankapp.model.Customer;
 
@@ -57,8 +58,8 @@ public class MainMenu extends Menu{
 			break;
 			
 		case 3 :
-			//EmployeeLoginForm employeeLoginForm = new EmployeeLoginForm("Employee Login Form");
-			//employeeLoginForm.captureDataAndPerformAction();
+			EmployeeLoginForm employeeLoginForm = new EmployeeLoginForm("Employee Login Form");
+			employeeLoginForm.captureDataAndPerformAction();
 			displayMenuAndCaptureSelection();
 			break;
 		case 4 : 

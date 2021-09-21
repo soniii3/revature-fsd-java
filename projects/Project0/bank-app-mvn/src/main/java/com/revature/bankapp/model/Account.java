@@ -131,4 +131,11 @@ public class Account {
 		return "acc_num=" + accountNumber + "  balance=" + balance;
 	}
 
+
+
+	public void setId(int int1) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

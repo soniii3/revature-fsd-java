@@ -85,30 +85,26 @@ public class TransactionDaoImpl implements TransactionDao {
 
 	@Override
 	public List<Transaction> showTransactions(long accountId) throws SQLException {
-List<Transaction> transactionList = new ArrayList<>();
-		
-		
-		try(Connection connection = Util.getConnection()){
-			
+		List<Transaction> transactionList = new ArrayList<>();
+
+		try (Connection connection = Util.getConnection()) {
+
 			String sql = "select  transaction_type, amount from transaction where account_id = ?";
-			
+
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, (int) accountId);
 			ResultSet rs = preparedStatement.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				Transaction transaction = new Transaction();
-				transaction.setType(rs.getString("transaction_type"));
+				transaction.setType(rs.getString("transaction_type").charAt(0));
 				transaction.setMoney(rs.getInt("amount"));
-				
+
 				transactionList.add(transaction);
 			}
 		}
-		
+
 		return transactionList;
 	}
-
-
-	
 
 }
