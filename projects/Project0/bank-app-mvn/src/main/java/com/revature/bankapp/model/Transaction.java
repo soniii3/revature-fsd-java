@@ -10,8 +10,8 @@ public class Transaction {
 	private String type;
 	private double amount;
 
-	public Transaction(String type, double amount) {
-		this.type = type;
+	public Transaction(String c, double amount) {
+		this.type = c;
 		this.amount = amount;
 	}
 	
@@ -19,6 +19,10 @@ public class Transaction {
 		
 	}
 	
+
+	public Transaction(char c, double amount2) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getCustomerId() {
 		return customerId;

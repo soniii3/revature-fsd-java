@@ -81,7 +81,7 @@ public class AccountDaoImpl implements AccountDao {
 			statement.setString(1, String.valueOf(transaction.getType()));
 			statement.setDouble(2, transaction.getAmount());
 			statement.setInt(3, currentAccountId);
-			statement.executeUpdate();
+			//statement.executeUpdate();
 
 		}
 

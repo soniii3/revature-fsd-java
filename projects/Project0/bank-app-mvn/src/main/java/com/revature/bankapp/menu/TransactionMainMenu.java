@@ -52,7 +52,7 @@ public class TransactionMainMenu extends Menu {
 			try {
 				System.out.println("Enter amount to deposit: ");
 				double amount = sc.nextDouble();
-				accdao.currentAccount().deposit(amount);
+				accdao.currentAccount();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

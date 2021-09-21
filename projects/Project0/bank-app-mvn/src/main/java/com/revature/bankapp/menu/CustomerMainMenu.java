@@ -63,7 +63,7 @@ public class CustomerMainMenu extends Menu{
 			break;*/
 			
 		case 3:
-			System.out.println("Logout");
+			System.out.println("Logout successfully");
 			MainMenu mm = new MainMenu("Main Menu");
 			mm.displayMenuAndCaptureSelection();
 			break;
