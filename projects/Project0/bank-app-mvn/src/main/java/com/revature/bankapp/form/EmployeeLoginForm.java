@@ -33,7 +33,7 @@ public class EmployeeLoginForm extends Form {
 	public void action() {
 		// TODO Auto-generated method stub
 		EmployeeDaoImpl edao = new EmployeeDaoImpl();
-		MainMenu mm =new MainMenu("Main Menu");
+		//MainMenu mm =new MainMenu("Main Menu");
 		try {
 			Employee employee = edao.getEmployeeUserId(Id);
 			if (employee == null) {
@@ -44,14 +44,14 @@ public class EmployeeLoginForm extends Form {
 				System.out.println("Login Successfull\n");
 				System.out.println("Welcome " + employee.getName());
 				EmployeeMainMenu empMenu = new EmployeeMainMenu("Admin Options");
-				empMenu.displayMenu();
+				empMenu.displayMenuAndCaptureSelection();
 			} else {
 				System.out.println("Invalid Username or Password");
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("FAILED");
-			mm.displayMenuAndCaptureSelection();
+			
 			
 		}
 		

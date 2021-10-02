@@ -81,14 +81,35 @@ public class Customer {
 
 	
 
-	public void setName(String string) {
-		// TODO Auto-generated method stub
-		
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public void setEmail(String string) {
-		// TODO Auto-generated method stub
-		
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setAccountList(ArrayList<Account> accountList) {
+		this.accountList = accountList;
+	}
+
+	public static void setCounter(long counter) {
+		Customer.counter = counter;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+	}
+	
+	
 
 }

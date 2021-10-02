@@ -28,7 +28,9 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			while(resultSet.next()) {
 				Customer customerTemp = new Customer();
 				customerTemp.setId(resultSet.getInt("id"));
-				customerTemp.setName(resultSet.getString("firstname"));
+				customerTemp.setFirstName(resultSet.getString("firstname"));
+				customerTemp.setLastName(resultSet.getString("lastname"));
+				
 				customerTemp.setEmail(resultSet.getString("email_id"));
 				customerList.add(customerTemp);
 			}
@@ -40,15 +42,15 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	public List<Account> showAccount() throws SQLException {
 		List<Account> accountList = new ArrayList<>();
 		try (Connection connection = Util.getConnection()) {
-			String sql = "select c.id, c.name, account_number, initial_amount from account\r\n" + 
-					"inner join customer c on customer_id = c.id";
+			String sql = "select c.id, c.firstname, account_num, balance from account\r\n" + 
+					"inner join customer c on cus_id = c.id";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				Account accountTemp = new Account();
 				accountTemp.setId(resultSet.getInt("id"));
-				accountTemp.setName(resultSet.getString("name"));
-				accountTemp.setAccountNumber(resultSet.getString("account_number"));
+				
+				accountTemp.setAccountNumber(resultSet.getString("account_num"));
 				accountTemp.setBalance(resultSet.getDouble("balance"));
 				accountList.add(accountTemp);
 
@@ -60,19 +62,21 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	public List<Transaction> viewTransaction() throws SQLException {
 		List<Transaction> transactionList = new ArrayList<>();
 		try (Connection connection = Util.getConnection()) {
-			String sql = "select c.id, c.name, a.account_number, a.initial_amount, t.type, t.amount from transaction t\r\n" + 
+			String sql = "select c.id, a.account_num, a.balance, t.type, t.amount from transaction t\r\n" + 
 					"inner join account a on account_id = a.id\r\n" + 
-					"inner join customer c on customer_id = c.id";
+					"inner join customer c on cus_id = c.id";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				Transaction transactionTemp = new Transaction();
 				transactionTemp.setCustomerId(resultSet.getInt("id"));
-				transactionTemp.setName(resultSet.getString("name"));
-				transactionTemp.setAccountNumber(resultSet.getString("account_number"));
-				transactionTemp.setAmount(resultSet.getDouble("balance"));
+				//transactionTemp.setFirstName(resultSet.getString("firstname"));
+				//transactionTemp.setLtName(resultSet.getString("firstname"));
+				transactionTemp.setAccountNumber(resultSet.getString("account_num"));
+				transactionTemp.setBalance(resultSet.getDouble("balance"));
 				transactionTemp.setType(resultSet.getString("type").charAt(0));
 				transactionTemp.setAmount(resultSet.getDouble("amount"));
+				transactionTemp.setAccountId(resultSet.getInt("id"));
 				transactionList.add(transactionTemp);
 
 			}
@@ -84,16 +88,16 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		Employee employee = null;
 		
 		try (Connection connection = Util.getConnection()){
-			String sql = "select * from admin where user_id = ?";
+			String sql = "select * from employee where email = ?";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, userId);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				String name = resultSet.getString("name");
-				String userid = resultSet.getString("user_id");
+				String email = resultSet.getString("email");
 				String password = resultSet.getString("password");
 				
-				employee = new Employee(name, userid, password);
+				employee = new Employee(name,email, password);
 			}
 		}
 		return employee;

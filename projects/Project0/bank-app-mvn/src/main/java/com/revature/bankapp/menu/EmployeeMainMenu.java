@@ -42,7 +42,7 @@ public class EmployeeMainMenu extends Menu{
 			AccountRegistrationForm createAcc = new AccountRegistrationForm("Account details");
 			createAcc.captureDataAndPerformAction();
 			
-			displayMenu();
+			
 			
 			break;
 		case 2:
@@ -55,7 +55,7 @@ public class EmployeeMainMenu extends Menu{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			displayMenu();
+			displayMenuAndCaptureSelection();
 			break;
 		case 3:
 			try {
@@ -67,7 +67,7 @@ public class EmployeeMainMenu extends Menu{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			displayMenu();
+			displayMenuAndCaptureSelection();
 			break;
 		case 4:
 			try {
@@ -79,7 +79,7 @@ public class EmployeeMainMenu extends Menu{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			displayMenu();
+			displayMenuAndCaptureSelection();
 			break;
 			
 		/*case 5:
@@ -90,7 +90,7 @@ public class EmployeeMainMenu extends Menu{
 			
 		case 6:
 			MainMenu mm = new MainMenu("Main Menu");
-			mm.displayMenu();
+			mm.displayMenuAndCaptureSelection();
 			break;
 		}
 		

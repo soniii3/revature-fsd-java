@@ -17,7 +17,7 @@ public class CustomerMainMenu extends Menu{
 		addMenuItem("Create Account");
 		addMenuItem("Logout");
 
-		displayMenuAndCaptureSelection();
+		//displayMenuAndCaptureSelection();
 			}
 
 	@Override

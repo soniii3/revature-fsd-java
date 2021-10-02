@@ -13,7 +13,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	public static int current_id;
 	public void create(Customer customer) throws SQLException {
 		try (Connection connection = Util.getConnection()) {
-			System.out.println(customer);
+			
 			String sql = "INSERT INTO customer (firstName, lastName, email_id, password) VALUES (?, ?, ?, ?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, customer.getFirstName());

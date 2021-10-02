@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class TransactionDaoImplTest {
 	@Test
-	public void test1() {
+	public void test() {
 		TransactionDaoImpl dao= new TransactionDaoImpl();
 		try {
 			dao.showBalance(4);

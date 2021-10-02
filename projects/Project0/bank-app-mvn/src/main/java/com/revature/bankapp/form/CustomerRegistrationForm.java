@@ -3,6 +3,7 @@ package com.revature.bankapp.form;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.revature.app.dao.CustomerDao;
 import com.revature.app.dao.impl.CustomerDaoImpl;
 import com.revature.bankapp.model.Customer;
 
@@ -12,18 +13,23 @@ public class CustomerRegistrationForm extends Form{
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
-
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String password;
+	
+	
 	@Override
 	public void captureData() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter First Name:");
-		String firstName = scanner.nextLine();
+		firstName = scanner.nextLine();
 		System.out.print("Enter LastName:");
-		String lastName = scanner.nextLine();
+		 lastName = scanner.nextLine();
 		System.out.print("Enter emailId:");
-		String email = scanner.nextLine();
+		email = scanner.nextLine();
 		System.out.print("Setup password:");
-		String password = scanner.nextLine();
+		password = scanner.nextLine();
 	}
 		
 		
@@ -32,6 +38,18 @@ public class CustomerRegistrationForm extends Form{
 	@Override
 	public void action() {
 		success =true;
+		CustomerDao dao=new CustomerDaoImpl();
+        try {
+        	dao.create(new Customer(firstName,lastName,email,password));
+        }catch (SQLException e) {
+	        System.out.println("unable to create customer");
+
+        	
+        }
+
+		System.out.println("Customer added successfully.");
+		
+		
 		
 	}
 

@@ -83,6 +83,7 @@ public class Account {
 			} 
 				else {
 					System.out.println("Insufficient funds");
+					break;
 				}
 
 			}
@@ -93,6 +94,7 @@ public class Account {
 			while (success) {
 				if (depositAmount < 0) {
 					System.out.println("Enter Amount greater than 0");
+					break;
 				} else {
 					balance += depositAmount;
 					success = false;

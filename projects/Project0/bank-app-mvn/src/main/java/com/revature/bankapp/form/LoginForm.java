@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.revature.app.dao.impl.CustomerDaoImpl;
 import com.revature.bankapp.menu.CustomerMainMenu;
+import com.revature.bankapp.menu.MainMenu;
 import com.revature.bankapp.model.Customer;
 
 
@@ -47,6 +48,8 @@ public class LoginForm extends Form {
 			} else {
 				System.out.println("Invalid Password or Email");
 				System.out.println("Please try again...");
+				MainMenu mm= new MainMenu("Main Menu");
+				mm.displayMenuAndCaptureSelection();
 			}
 
 		} catch (SQLException e) {

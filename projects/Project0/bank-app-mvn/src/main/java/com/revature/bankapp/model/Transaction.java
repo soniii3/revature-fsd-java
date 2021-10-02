@@ -6,7 +6,7 @@ public class Transaction {
 	private int customerId;
 	private String name;
 	private String accountNumber;
-	private double initialAmount;
+	private double balance;
 	private int accountId;
 	private char type;
 	private double amount;
@@ -43,11 +43,11 @@ public class Transaction {
 	}
 
 	public double getInitialAmount() {
-		return initialAmount;
+		return balance;
 	}
 
-	public void setInitialAmount(double initialAmount) {
-		this.initialAmount = initialAmount;
+	public void setInitialAmount(double balance) {
+		this.balance = balance;
 	}
 
 	public int getAccountId() {
@@ -84,14 +84,21 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return "CustomerId: " + customerId + "  Name: " + name + "  Account Number: " + accountNumber
-				+ "  Balance: " + initialAmount + "  Account Id: " + accountId + "  Type: " + type + "  Amount: "
+		return "CustomerId: " + customerId + "  Account Number: " + accountNumber
+				+ "  Balance: " + balance + "  Account Id: " + accountId + "  Type: " + type + "  Amount: "
 				+ amount;
 	}
 
 	public void setMoney(int int1) {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+
+	public void setBalance(double balance) {
+		// TODO Auto-generated method stub
+		this.balance=balance;
 	}
 
 	

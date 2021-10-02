@@ -81,7 +81,7 @@ public class TransactionMainMenu extends Menu {
 
 		case 5:
 			System.out.println("Enter Account Number of receiver: ");
-			transferAccNum = sc.nextLine();
+			transferAccNum = sc.next();
 			System.out.println("Enter amount to transfer: ");
 			double amount = sc.nextDouble();
 			try {
@@ -92,7 +92,8 @@ public class TransactionMainMenu extends Menu {
 				System.out.println("withdraw failed");
 			}
 			try {
-				accdao.transferAccount().transfer(amount);
+				accdao.transferAccount().deposit(amount);
+				
 			} catch (SQLException e) {
 				e.printStackTrace();
 				System.out.println("deposit failed");
