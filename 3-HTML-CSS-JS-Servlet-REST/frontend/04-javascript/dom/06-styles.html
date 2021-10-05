@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Styles</title>
+        <style>
+
+            .paragraph {
+                color: blue;
+                font-size: 40px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <p id="para">This is a Paragraph.</p>
+        <script>
+
+            //element will contain HTMLElement object
+           var element = window.document.getElementById("para");
+           //element.style.color="blue";
+           //element.style.fontSize="30px";
+           element.className="paragraph";
+
+        </script>
+    </body>
+</html>

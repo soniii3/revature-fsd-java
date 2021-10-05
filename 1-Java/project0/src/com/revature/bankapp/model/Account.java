@@ -82,8 +82,8 @@ public class Account {
 
 
 	public static void main(String[] args) {
-		
-
+		Account account = new Account(100,123456789,5000,"tirupathi","john");
+		System.out.println(account.id);
 	}
 
 }

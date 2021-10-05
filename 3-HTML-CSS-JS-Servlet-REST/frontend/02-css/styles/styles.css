@@ -1,0 +1,29 @@
+/* Class Selector */
+.nav {
+    background-color:darkred; 
+    padding: 0.3rem; 
+    text-decoration: none; 
+    color: yellow; 
+    font-weight: bold; 
+    cursor:pointer;
+}
+
+/* ID selector */
+#heading {
+    color:blue;
+    /*padding: 1rem;
+    border: 5px solid blue;
+    margin: 1rem;*/
+}
+div{
+    border: 2px solid green;
+    background-color: salmon;
+}
+
+.row {
+    color: red;
+}
+
+/* *{ 
+    border: 3px solid green;
+}*/

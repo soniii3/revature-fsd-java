@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Demo</title>
+    </head>
+    <body>
+        <h1>Form Demo</h1>
+        <form method="POST" action="https://www.w3schools.com/action_page.php">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" placeholder="Enter Name" value="sonia" name="name">
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Min. 8 characters" value="33355" name="password" required>
+            <br><br>
+            <label for="email">Email</label>
+            <input type="text" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.9.-]+\.[a-z]{2,}$" value="sonia@gmail.com" name="email" title="Enter valid Email." required>
+            <label>Choose your color:</label>
+            <select name="color">
+                <option>Blue</option>
+                <option selected>Black</option>
+                <option>White</option>
+            </select>
+
+            <br><br>
+            <!-- single select -->
+            <label>Gender:</label><br>
+            
+            <input type="radio" name="gender" value="m" id="male"> 
+            <label for="male" >Male</label><br>
+            
+            <input type="radio" name="gender" value="f" id="female" checked> 
+            <label for="female">Female</label><br>
+
+            <!-- multi select -->
+            <label>Choose your Language:</label>
+            <select multiple name="language-m">
+                <option>Telugu</option>
+                <option selected>English</option>
+                <option>Hindi</option>
+                <option>Tamil</option>
+            </select>
+            <br><br>
+
+
+            <label>Choose your Language</label><br>
+            <input type="checkbox" id="english" name="languages" value="en" checked> <label for="english" >English</label><br>
+            <input type="checkbox" id="telugu" name="languages" value="tel"> <label for="telugu" >Telugu</label><br>
+            <input type="checkbox" id="hindi" name="languages" value="hin"> <label for="hindi" >Hindi</label><br>
+            <input type="checkbox" id="tamil" name="languages" value="tam"> <label for="tamil" >Tamil</label><br><br>
+
+            <textarea name="textarea">Line1
+
+            </textarea>
+            <br>
+
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>

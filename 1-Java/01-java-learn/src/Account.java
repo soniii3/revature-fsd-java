@@ -20,6 +20,7 @@ public class Account {
 		System.out.println("--------------------------");
 		
 		for (Transaction transaction : transactions ) {
+			char type;
 			if (type == 'D') {
 				balance += transaction;
 			}
