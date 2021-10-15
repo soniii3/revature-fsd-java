@@ -2,7 +2,6 @@ package com.revature.bankapp.model;
 
 import java.sql.SQLException;
 
-import com.revature.bankapp.dao.impl.AccountDaoImpl;
 
 public class Account {
 
@@ -11,7 +10,7 @@ public class Account {
 	private String branch;
 	private double balance;
 	private boolean success = true;
-	AccountDaoImpl accdao = new AccountDaoImpl();
+	
 
 	public Account(String name, String branch, double balance) {
 		super();
@@ -66,67 +65,67 @@ public class Account {
 		this.balance = d;
 	}
 
-	public double withdraw(double withdrawAmount) {
-		while (success) {
-			if (withdrawAmount < 0) {
-				System.out.println("Enter Amount greater than 0");
-			} else if (withdrawAmount <= balance) {
-				balance -= withdrawAmount;
-				success = false;
-				try {
-					accdao.insert(new Transaction('D', withdrawAmount));
-					accdao.update(this);
-					System.out.println("Successfull");
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			} 
-				else {
-					System.out.println("Insufficient funds");
-					break;
-				}
-
-			}
-			return balance;
-		}
-
-		public double deposit(double depositAmount) {
-			while (success) {
-				if (depositAmount < 0) {
-					System.out.println("Enter Amount greater than 0");
-					break;
-				} else {
-					balance += depositAmount;
-					success = false;
-					try {
-						accdao.insert(new Transaction('C', depositAmount));
-						accdao.update(this);
-						System.out.println("Successfull");
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-
-			return balance;
-		}
-
-		
-		public void transfer(double amount) {
-			balance += amount;
-			try {
-				accdao.insertTransfer(new Transaction('C', amount));
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			try {
-				accdao.updateTransfer(this);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+//	public double withdraw(double withdrawAmount) {
+//		while (success) {
+//			if (withdrawAmount < 0) {
+//				System.out.println("Enter Amount greater than 0");
+//			} else if (withdrawAmount <= balance) {
+//				balance -= withdrawAmount;
+//				success = false;
+//				try {
+//					//accdao.insert(new Transaction('D', withdrawAmount));
+//					accdao.update(this);
+//					System.out.println("Successfull");
+//				} catch (SQLException e) {
+//					e.printStackTrace();
+//				}
+//			} 
+//				else {
+//					System.out.println("Insufficient funds");
+//					break;
+//				}
+//
+//			}
+//			return balance;
+//		}
+//
+//		public double deposit(double depositAmount) {
+//			while (success) {
+//				if (depositAmount < 0) {
+//					System.out.println("Enter Amount greater than 0");
+//					break;
+//				} else {
+//					balance += depositAmount;
+//					success = false;
+//					try {
+//						accdao.insert(new Transaction('C', depositAmount));
+//						accdao.update(this);
+//						System.out.println("Successfull");
+//					} catch (SQLException e) {
+//						e.printStackTrace();
+//					}
+//				}
+//			}
+//
+//			return balance;
+//		}
+//
+//		
+//		public void transfer(double amount) {
+//			balance += amount;
+//			try {
+//				accdao.insertTransfer(new Transaction('C', amount));
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			try {
+//				accdao.updateTransfer(this);
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
 
 	@Override
 	public String toString() {
