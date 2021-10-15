@@ -57,31 +57,27 @@
                     
                     <form class="pop">
                         <div class="form-group">
-                            <label for="firstName" style=" font-weight: bold;">Firstname</label>
+                            <label for="name" style=" font-weight: bold;">Name</label>
                             <input type="text" class="form-control" name="firstname" id="firstName"
-                                placeholder="Enter first name">
+                                placeholder="Enter Your Name">
                         </div>
-                        <!-- <div id="firstNameError" class="validation-error text-danger font-weight-bold"></div> -->
+                        <div id="NameError" class="validation-error text-danger font-weight-bold"></div>
 
-                        <div class="form-group">
-                            <label for="lastName" style=" font-weight: bold;">Lastname</label>
-                            <input type="text" class="form-control" name="lastname" id="lastName"
-                                placeholder="Enter last name">
-                        </div>
-                        <!-- <div id="LastNameError" class="validation-error text-danger font-weight-bold"></div> -->
+                        
                         <div class="form-group">
                             <label for="email" style=" font-weight: bold;">Email</label>
                             <input type="email" class="form-control" name="email" id="email"
                                 placeholder="Enter email id">
                         </div>
-                        <!-- <div id="emailError" class="validation-error text-danger font-weight-bold"></div> -->
+                        <div id="emailError" class="validation-error text-danger font-weight-bold"></div>
                         <div class="form-group">
                             <label for="password" style=" font-weight: bold;">Password</label>
                             <input type="password" class="form-control" name="password" id="password"
                                 placeholder="Enter password">
                         </div>
-                        <!-- <div id="passwordError" class="validation-error text-danger font-weight-bold"></div> -->
-                        <input type="button" class="btn btn-success" id="submit" value="Signup">
+                        <div id="passwordError" class="validation-error text-danger font-weight-bold"></div>
+                        <input type="button" class="btn btn-success" id="submit" value="Signup"
+                            onclick="onClickingButton()">
                     </form>
                     <br><br><br><br>
                 </div>
@@ -91,7 +87,7 @@
         </div>
     </div>
 
-    <script src="scripts/customersign.js"></script>
+    <script src="scripts/employeesignup.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
