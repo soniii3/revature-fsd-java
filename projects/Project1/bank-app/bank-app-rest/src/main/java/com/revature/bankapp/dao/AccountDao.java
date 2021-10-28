@@ -8,7 +8,7 @@ import com.revature.bankapp.model.Account;
 
 public interface AccountDao {
 	void create(Account account) throws AppException;
-	public List<Account> showAccounts() throws AppException;
+	List<Account> showAccounts(int id) throws AppException;
 	
 	
 

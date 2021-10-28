@@ -10,7 +10,20 @@ public class Account {
 	private String branch;
 	private double balance;
 	private boolean success = true;
+	private int cus_id;
 	
+
+	public int getCus_id() {
+		return cus_id;
+	}
+
+
+
+	public void setCus_id(int cus_id) {
+		this.cus_id = cus_id;
+	}
+
+
 
 	public Account(String name, String branch, double balance) {
 		super();

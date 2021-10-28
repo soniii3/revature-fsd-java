@@ -17,6 +17,9 @@ public class CustomerDaoImpl implements CustomerDao{
 	
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerDaoImpl.class);
+	
+	
+	public static int currentCustomerId;
 
 	@Override 
 	public void create(Customer customer) throws AppException {

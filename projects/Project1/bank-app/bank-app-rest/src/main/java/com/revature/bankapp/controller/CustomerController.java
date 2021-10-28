@@ -10,6 +10,8 @@ import javax.ws.rs.core.Response;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.revature.bankapp.dao.CustomerDao;
 import com.revature.bankapp.daoimpl.CustomerDaoImpl;
 import com.revature.bankapp.exception.AppException;
 import com.revature.bankapp.model.Customer;
@@ -18,10 +20,10 @@ import com.revature.bankapp.model.Customer;
 public class CustomerController {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
-	private CustomerDaoImpl dao = new CustomerDaoImpl();
+	private CustomerDao dao = new CustomerDaoImpl();
 	
 	@POST
-	//@Consumes(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(Customer customer) {
 		LOGGER.info("Start");
 		LOGGER.debug("{}", customer);

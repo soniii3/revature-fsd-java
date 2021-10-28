@@ -46,6 +46,12 @@ public class Transaction {
 		return balance;
 	}
 
+	public double getBalance() {
+		return balance;
+	}
+
+
+
 	public void setInitialAmount(double balance) {
 		this.balance = balance;
 	}

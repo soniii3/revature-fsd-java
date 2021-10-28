@@ -23,7 +23,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	public List<Customer> viewCustomer() throws AppException {
 		List<Customer> customerList = new ArrayList<>();
 		try (Connection connection = Util.getConnection()) {
-			String sql = "select * from customer";
+			String sql = "select id,firstname,lastname,email_id from customer";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			ResultSet resultSet = statement.executeQuery();
 			while(resultSet.next()) {
@@ -31,8 +31,18 @@ public class EmployeeDaoImpl implements EmployeeDao{
 				customerTemp.setId(resultSet.getInt("id"));
 				customerTemp.setFirstName(resultSet.getString("firstname"));
 				customerTemp.setLastName(resultSet.getString("lastname"));
-				
 				customerTemp.setEmail(resultSet.getString("email_id"));
+//				Account account = new Account();
+//				 account.setAccountNumber(resultSet.getString("accountNumber"));
+//				 account.setBalance(resultSet.getDouble("balance"));
+//				 customerTemp.setAccountList(account);
+//				 
+				 
+//				 System.out.println("customer"+customerTemp);
+				 
+				 
+				
+				
 				customerList.add(customerTemp);
 			}
 		}catch (SQLException e) {

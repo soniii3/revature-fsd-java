@@ -10,17 +10,17 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//import com.revature.bankapp.menu.TransactionMainMenu;
-import com.revature.bankapp.model.Account;
-import com.revature.bankapp.model.Transaction;
 import com.revature.bankapp.dao.AccountDao;
 import com.revature.bankapp.dao.Util;
 import com.revature.bankapp.exception.AppException;
+//import com.revature.bankapp.menu.TransactionMainMenu;
+import com.revature.bankapp.model.Account;
 
 public class AccountDaoImpl implements AccountDao {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(AccountDaoImpl.class);
-
+	
+	CustomerDaoImpl customer = new CustomerDaoImpl();
 	public static int currentAccountId;
 	public static int transferAccountId;
 
@@ -34,7 +34,7 @@ public class AccountDaoImpl implements AccountDao {
 
 			preparedStatement.setString(1, account.getAccountNumber());
 			preparedStatement.setInt(2, (int) account.getBalance());
-			preparedStatement.setInt(3, 46);
+			preparedStatement.setInt(3, account.getCus_id());
 
 			preparedStatement.executeUpdate();
 			LOGGER.info("End");
@@ -47,18 +47,20 @@ public class AccountDaoImpl implements AccountDao {
 	}
 
 	@Override
-	public List<Account> showAccounts() throws AppException {
+	public List<Account> showAccounts(int id) throws AppException {
 		List<Account> accountList = new ArrayList<>();
 		try (Connection connection = Util.getConnection()) {
 			String sql = "select * from account where cus_id=?";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			//preparedStatement.setInt(1, CustomerDaoImpl.current_id);
+			preparedStatement.setInt(1,id);
 			ResultSet rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
 				Account account = new Account();
 				account.setAccountNumber(rs.getString("account_num"));
 				account.setBalance(rs.getDouble("balance"));
+				account.setCus_id(rs.getInt("cus_id"));
+				
 
 				accountList.add(account);
 			}
@@ -80,6 +82,9 @@ public class AccountDaoImpl implements AccountDao {
 				currentAccountId = resultSet.getInt("id");
 				String accNumber = resultSet.getString("account_num");
 				Double balance = resultSet.getDouble("balance");
+				String name = resultSet.getString("name");
+				String branch = resultSet.getString("branch");
+				
 
 				account = new Account(accNumber, balance);
 			}
