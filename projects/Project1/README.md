@@ -3,26 +3,26 @@
 An online bank application which will be useful for customer for online transaction form one account to another account.
 
 ## Software Requirements
-•	Any IDE (Eclipse/SpringToolSuite4/NetBeans
-•	Tomcat server
+*	Any IDE (Eclipse/SpringToolSuite4/NetBeans
+*	Tomcat server
 
 ## Languages Used
-•	Front End: HTML, CSS, BOOTSTRAP, JavaScript 
-•	Back End: Java 
-•	Database: MySQL
+*	Front End: HTML, CSS, BOOTSTRAP, JavaScript 
+*	Back End: Java 
+*	Database: MySQL
 
 ## Features
-•	Customer can sign up and login into their account using credentials.
-•	Customer can do online transactions from one account to other account.
-•	Employee can view the list of customers and their transactions.
-•	Withdraw and deposit can only possible if the account have the minimum balance.
+*	Customer can sign up and login into their account using credentials.
+*	Customer can do online transactions from one account to other account.
+*	Employee can view the list of customers and their transactions.
+*	Withdraw and deposit can only possible if the account have the minimum balance.
 
 ## Getting Started
-Ensure you have the following installed in your system:
-git
-Clone the project locally into your system.
-git clone https://github.com/soniii3/revature-fsd-java/edit/master/projects/Project1
-Finally open my ui in visual studio and turn on the tomcat server.
+* Ensure you have the following installed in your system:
+    * git
+* Clone the project locally into your system.
+    * git clone https://github.com/soniii3/revature-fsd-java/edit/master/projects/Project1
+* Finally open my ui in visual studio and turn on the tomcat server.
 
 ## Usage
 * First you have to start your tomcat server.
