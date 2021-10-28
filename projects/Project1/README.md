@@ -7,9 +7,9 @@ Any IDE(Eclipse/SpringToolSuite4/NetBeans
 Tomcat server
 
 ## Languages Used
-Front End : HTML, CSS, BOOTSTRAP, JavaScript
-Back End : Java
-Database : MySQL
+•	Front End: HTML, CSS, BOOTSTRAP, JavaScript 
+•	Back End: Java 
+•	Database: MySQL
 
 ## Technologies Used
 Maven
